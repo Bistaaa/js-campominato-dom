@@ -19,6 +19,22 @@ play.addEventListener("click", function () {
         const newSquare = createSquare();
         grid.append(newSquare);
 
+        //generare 16 numeri casuali
+        let bombNumbers = []
+        while (bombNumbers.length < 16) {
+
+            const newBombNumber = Math.floor(Math.random() * 100) + 1;
+
+            if (!bombNumbers.includes(newBombNumber)){
+                bombNumbers.push(newBombNumber);
+            }
+        }
+
+        console.log(bombNumbers);
+
+
+
+
         //aggiungiamo la classe .square ai quadrati
         newSquare.classList.add("square");
 
@@ -55,3 +71,18 @@ function createSquare() {
 function colorSquare(element, color) {
     element.classList.add(color);  
 }
+
+
+
+
+
+
+
+
+
+
+//inserire nell'array i 16 numeri eliminando quelli uguali
+
+//attribuire ai 16 quadratii la classe bomb
+
+//creare if per le 2 opzioni al click (continua / hai perso)
